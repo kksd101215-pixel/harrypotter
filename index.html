@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harry Potter</title>
+  <style>
+    body {
+      margin:0;
+      font-family:'Cinzel', serif;
+      background: #000000;
+      color: #f5f5f5;
+      overflow-x: hidden;
+    }
+    header {
+      font-size: 2.5em;
+      text-align: center;
+      margin-top: 50px;
+      text-shadow: 0 0 15px #ff0000;
+      animation: fadeIn 3s ease-in-out;
+    }
+    p {
+      max-width: 800px;
+      margin: 50px auto;
+      line-height: 2;
+      font-size: 1.2em;
+      text-align: justify;
+    }
+    .start-button {
+      display: block;
+      margin: 50px auto;
+      padding: 20px 50px;
+      font-size: 1.2em;
+      background: #111;
+      border: 2px solid #f5f5f5;
+      color: #f5f5f5;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .start-button:hover {
+      background:#f5f5f5;
+      color:#000;
+      transform: scale(1.1);
+    }
+    .magic-spark {
+      position:absolute;
+      width:5px;
+      height:5px;
+      background:#fff;
+      border-radius:50%;
+      animation: spark 2s infinite;
+    }
+    @keyframes fadeIn {
+      0% {opacity:0; transform:translateY(-50px);}
+      100% {opacity:1; transform:translateY(0);}
+    }
+    @keyframes spark {
+      0% {transform: translate(0,0); opacity:1;}
+      50% {transform: translate(50px,-50px); opacity:0.5;}
+      100% {transform: translate(0,0); opacity:1;}
+    }
+  </style>
+</head>
+<body>
+  <header>Welcome to the Haunted World of Harry Potter</header>
+  <p>
+    In a world shrouded by shadows and whispers, magic pulses like a living heartbeat through the haunted halls of Hogwarts and beyond. Harry Potter, the boy who lived, steps into a realm where danger lurks in every corner, secrets lie beneath every stone, and creatures of the dark watch silently from the shadows. From the moment the first lightning scar appeared on his forehead, the journey began—a journey of fear, courage, and destiny that will carry him through encounters more terrifying than any mortal can imagine. Ghostly figures drift through the mists, spells crackle like thunder in the night, and the dark arts weave a tapestry of peril, shaping the fate of a world both magical and haunted.
+  </p>
+  <button class="start-button" onclick="location.href='story1.html'">Enter the Dark Journey</button>
+
+  <script>
+    for(let i=0;i<70;i++){
+      let spark = document.createElement('div');
+      spark.className = 'magic-spark';
+      spark.style.top = Math.random()*100+'%';
+      spark.style.left = Math.random()*100+'%';
+      spark.style.width = spark.style.height = Math.random()*5 + 3 +'px';
+      document.body.appendChild(spark);
+    }
+  </script>
+</body>
+</html>
